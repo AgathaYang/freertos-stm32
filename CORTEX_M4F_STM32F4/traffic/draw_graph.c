@@ -102,3 +102,42 @@ void DrawBackground(void)
 		LCD_DrawLine(graph->x, graph->y, graph->wl.len, graph->hd.dir);
 	}
 }
+
+void DrawUsart(uint8_t *t)
+{
+ 
+ LCD_SetTextColor(LCD_COLOR_RED);
+ LCD_DisplayStringLine(LCD_LINE_1, &t);
+LCD_DrawLine(100,100,50,LCD_DIR_HORIZONTAL);
+}
+
+void DrawFunction(int FuncArray[] , int Length)
+{
+	int a,b,c;
+	a = FuncArray[0];
+	b = FuncArray[1];
+	c = FuncArray[2];
+	int Xpos,Ypos,math_x,math_y;
+	Xpos = 10;
+	Ypos = 10;
+	math_x =0;
+	math_y =0;
+
+        for(math_x=0;math_x<100;math_x++)
+	{
+
+		math_y = a*math_x*math_x + b*math_x + c;
+		LCD_DrawCircle(math_x+Xpos , math_y+Ypos , 1);
+		
+		
+	}
+
+	
+}
+
+
+	
+
+
+
+
